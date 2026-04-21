@@ -1,0 +1,6 @@
+.PHONY: fix
+
+fix:
+	go mod tidy
+	go fmt ./...
+	go vet ./...
