@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package task.v1;
+
+option go_package = "github.com/viacheslavprokosa/gocron/proto/task/v1";
+
+service TaskService {
+    rpc RunTask(TaskRequest) returns (TaskResponse);
+}
+
+message TaskRequest {
+    string task_id = 1;
+    string payload = 2;
+}
+
+message TaskResponse {
+   bool success = 1;
+   string message=2;
+}
